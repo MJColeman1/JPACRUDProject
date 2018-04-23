@@ -12,7 +12,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>2 Col Portfolio - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +26,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.do">NHL Stats</a>
+        <a class="navbar-brand" href="index.do">NHL Player Stats</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,17 +41,24 @@
         </div>
       </div>
     </nav>
-<form action="getPlayers.do" method="GET">
-  <input type="submit" value="Show Top 10 Players"/>
-</form> 
- <br>
- <br>
+    
+    <div class="container">
+        <div class="row">
+          <div class="col text-center">
+<br>
+
   Search by Player Rank for the 2017-2018 Season: 
 <form action="searchById.do" method="GET">
   <input type="text" name="pid" required pattern="[0-9]*"/>
-  <input type="submit" value="Search"/>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form> 
 <br>
+<br>
+
+<form action="getPlayers.do" method="GET">
+  <button type="submit" class="btn btn-primary">Show All Players</button>
+</form> 
+
 <br>
 <br>
 
@@ -65,7 +71,7 @@ First Name:
   Team:
   <input type="text" name="team" required minlength="1" maxlength="45"/> <br>
   Position:
-  <input type="text" name="position" required minlength="2" maxlength="2"/> <br>
+  <input type="text" name="position" required minlength="1" maxlength="2"/> <br>
   Games Played:
   <input type="text" name="gamesPlayed" required pattern="[0-9]*"/> <br>
   Goals:
@@ -75,9 +81,9 @@ First Name:
   Points:
   <input type="text" name="points" required pattern="[0-9]*"/> <br>
   Plus/Minus:
-  <input type="text" name="plusMinus" required pattern="[0-9]*"/> <br>
+  <input type="text" name="plusMinus" required pattern="^-?(0|[1-9]\d*)$"/> <br>
   Points per Game:
-  <input type="text" name="pointsPerGame" required pattern="[0-9]*"/> <br>
+  <input type="text" name="pointsPerGame" required pattern="^(0|[1-9]\d*)(\.\d+)?$"/> <br>
   Powerplay Goals:
   <input type="text" name="powerplayGoals" required pattern="[0-9]*"/> <br>
   Shorthanded Goals:
@@ -89,14 +95,17 @@ First Name:
   Shots:
   <input type="text" name="shots" required pattern="[0-9]*"/> <br>
   Shot Percentage:
-  <input type="text" name="shotPercentage" required pattern="[0-9]*" /> <br>
+  <input type="text" name="shotPercentage" required pattern="^(0|[1-9]\d*)(\.\d+)?$" /> <br>
   Time on Ice per Game:
-  <input type="text" name="toiPerGame" required pattern="[0-9]*"/> <br>
+  <input type="text" name="toiPerGame" required minlength="1" maxlength="10"/> <br>
   Faceoff Win Percentage:
-  <input type="text" name="fowPercentage" required pattern="[0-9]*"/> <br>
-  <input type="submit" value="Create"/>
+  <input type="text" name="fowPercentage" required pattern="^(0|[1-9]\d*)(\.\d+)?$"/> <br> <br>
+    <button type="submit" class="btn btn-primary">Create Player</button>
 </form> 
-    
+    <br> <br>
+    </div>
+    </div>
+    </div>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
@@ -108,18 +117,6 @@ First Name:
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<%-- <c:forEach var="s" items="${players}">
-<tr>
-  <td>${s.firstName}</td>
-  <td>${s.lastName}</td>
-  <td>${s.goals}</td>
-  <td>${s.assists}</td>
-  <td>${s.points}</td>
-  <td>${s.toiPerGame}</td>
-  <td> <img src="${s.imageURL}"></td>
-</tr>
-</c:forEach> --%>
-
 
 </body>
 </html>

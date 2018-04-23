@@ -25,7 +25,7 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="index.do">NHL Stats</a>
+			<a class="navbar-brand" href="index.do">NHL Player Stats</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -36,17 +36,19 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="index.do">Home <span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="updatePlayer.do">Update Player</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="deletePlayer.do">Delete Player</a></li>
-					<li class="nav-item"><a class="nav-link" href="index.do">New
-							Search</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	Update Player Stats from 2017-2018 Season:
+	
+	<div class="container">
+        <div class="row">
+          <div class="col text-center">
+          
+          <br>
+          
+	<h3> Update Player Stats from 2017-2018 Season: </h3>
+	<br>
 	<form action="updatedPlayer.do" method="POST">
 		<input type="hidden" name="id" value="${id }" /> 
 		First Name: 
@@ -66,9 +68,9 @@
 		Points: 
 		<input value="${player.points }" name="points" required pattern="[0-9]*"/> <br>
 		Plus/Minus: 
-		<input value="${player.plusMinus }" name="plusMinus" required pattern="[0-9]*"/> <br>
+		<input value="${player.plusMinus }" name="plusMinus" required pattern="^-?(0|[1-9]\d*)$"/> <br>
 		Points per Game: 
-		<input value="${player.pointsPerGame }" name="pointsPerGame" required pattern="[0-9]*"/> <br> 
+		<input value="${player.pointsPerGame }" name="pointsPerGame" required pattern="^(0|[1-9]\d*)(\.\d+)?$"/> <br> 
 		Powerplay Goals: 
 		<input value="${player.powerplayGoals }" name="powerplayGoals" required pattern="[0-9]*"/> <br>
 		Shorthanded Goals: 
@@ -79,14 +81,18 @@
 		<input value="${player.overtimeGoals }" name="overtimeGoals" required pattern="[0-9]*"/> <br> 
 		Shots: <input value="${player.shots }" name="shots" required pattern="[0-9]*"/> <br> 
 		Shot Percentage: 
-		<input value="${player.shotPercentage }" name="shotPercentage" required pattern="[0-9]*" /> <br>
+		<input value="${player.shotPercentage }" name="shotPercentage" required pattern="^(0|[1-9]\d*)(\.\d+)?$" /> <br>
 		Time on Ice per Game: 
-		<input value="${player.toiPerGame }"name="toiPerGame" required pattern="[0-9]*"/> <br> 
+		<input value="${player.toiPerGame }"name="toiPerGame" required minlength="1" maxlength="10"/> <br> 
 		Faceoff Win Percentage: 
-		<input value="${player.fowPercentage }" name="fowPercentage" required pattern="[0-9]*"/> <br> 
-		<input type="submit" value="Update Player" />
+		<input value="${player.fowPercentage }" name="fowPercentage" required pattern="^(0|[1-9]\d*)(\.\d+)?$"/> <br> 
+		<br>
+		  <button type="submit" class="btn btn-primary">Update Player</button>
 	</form>
- <a href="index.do">Return to Homepage</a>
+<br>
+</div>
+</div>
+</div>
  <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">

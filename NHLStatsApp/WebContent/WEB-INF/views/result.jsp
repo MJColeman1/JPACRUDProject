@@ -25,7 +25,7 @@
  <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.do">NHL Stats</a>
+        <a class="navbar-brand" href="index.do">NHL Player Stats</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,21 +35,15 @@
               <a class="nav-link" href="index.do">Home
                 <span class="sr-only">(current)</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="updatePlayer.do">Update Player</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="deletePlayer.do">Delete Player</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.do">New Search</a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
+<div class="container">
+        <div class="row">
+          <div class="col text-center">
 <c:choose>
+
 
   <c:when test="${not empty player}">
 <tr>
@@ -75,16 +69,17 @@
   <td>Average Time on Ice: ${player.toiPerGame}</td> <br>
   <td>Faceoff Win Percentage: ${player.fowPercentage}%</td> <br>
 </tr>
-    
+<br>    
 <form action="deletePlayer.do" method="POST">
 <input type="hidden" name="id" value="${player.id }"/>
-  <input type="submit" value="Delete Player"/>
-</form> 
-
+  <button type="submit" class="btn btn-primary">Delete Player</button>
+  </form>
+  <br> 
 <form action="updatePlayer.do" method="GET">
 <input type="hidden" name="id" value="${player.id }"/>
-  <input type="submit" value="Update Player"/>
+    <button type="submit" class="btn btn-primary">Update Player</button>
 </form>
+<br>
   </c:when>
   <c:when test="${not empty players}">
  <p> <c:forEach var="s" items="${players}">
@@ -115,6 +110,8 @@
 
   </c:when>
   <c:when test="${not empty created}">
+  <h3> Your Created Player </h3>
+  <br>
   <tr>
   <td>Player ID: ${created.id} </td> <br>
   <td>First Name: ${created.firstName}</td> <br>
@@ -142,11 +139,13 @@
   </c:otherwise>
 </c:choose>
 
+</div>
+</div>
+</div>
 
-  <a href="index.do">Return to Homepage</a>
  <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
+    <footer class="py-5 bg-dark bottom">
+      <div class="footer navbar-fixed-bottom">
         <p class="m-0 text-center text-white">Developed and Created by Mark Coleman</p>
       </div>
       <!-- /.container -->
