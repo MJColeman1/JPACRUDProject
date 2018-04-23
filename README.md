@@ -11,16 +11,16 @@ To run this application, the user starts at the homepage and has 3 options to se
 ### Technologies Used
 * Spring MVC
 * Controllers
-J-Unit Tests
-Exception Handling
-Java Persistence API
-Interfaces
-Managing Dependencies Utilizing Gradle
-JSPs
-MySQL Workbench for Database Creation
-Entity Classes
-HTML/CSS/Bootstrap
-Form Validation
+* J-Unit Tests
+* Exception Handling
+* Java Persistence API
+* Interfaces
+* Managing Dependencies Utilizing Gradle
+* JSPs
+* MySQL Workbench for Database Creation
+* Entity Classes
+* HTML/CSS/Bootstrap
+* Form Validation
 
 ### Lessons Learned
 The biggest lesson learned involves Spring and where certain keywords need to match for the controller and JSP to function correctly. My understanding of the Request Param and Request Mapping fields greatly increased while working on this project.  
