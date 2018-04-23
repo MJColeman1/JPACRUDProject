@@ -9,8 +9,8 @@ The objective of this project is to create an application that allows a user to 
 To run this application, the user starts at the homepage and has 3 options to select from: search for a player by their rank, show all players in the database, or create a player by filling out a form and inputting the required fields accurately. If the user chooses to search for a player and finds a match, they are presented with that player's stats and given the option to either update or delete the player; the same two options to update or delete are also present after the form to create a player has been submitted. 
 
 ### Technologies Used
-Spring MVC
-Controllers
+* Spring MVC
+* Controllers
 J-Unit Tests
 Exception Handling
 Java Persistence API
