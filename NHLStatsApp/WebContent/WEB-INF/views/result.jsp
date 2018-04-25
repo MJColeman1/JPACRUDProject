@@ -69,16 +69,24 @@
   <td>Average Time on Ice: ${player.toiPerGame}</td> <br>
   <td>Faceoff Win Percentage: ${player.fowPercentage}%</td> <br>
 </tr>
-<br>    
+<br>
+<br> 
+<h3> ${player.firstName } ${player.lastName }'s Home Arena Location </h3> 
+ <iframe
+        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12294.412555788791!2d${player.longitude}!3d${player.latitude}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1524343863196"
+        width="100%" height="400" frameborder="0" style="border: 0"
+        allowfullscreen></iframe>
+<br>    <br>
+<form action="updatePlayer.do" method="GET">
+<input type="hidden" name="id" value="${player.id }"/>
+    <button type="submit" class="btn btn-primary">Update Player</button>
+</form>
+<br>
 <form action="deletePlayer.do" method="POST">
 <input type="hidden" name="id" value="${player.id }"/>
   <button type="submit" class="btn btn-primary">Delete Player</button>
   </form>
   <br> 
-<form action="updatePlayer.do" method="GET">
-<input type="hidden" name="id" value="${player.id }"/>
-    <button type="submit" class="btn btn-primary">Update Player</button>
-</form>
 <br>
   </c:when>
   <c:when test="${not empty players}">
@@ -144,8 +152,8 @@
 </div>
 
  <!-- Footer -->
-    <footer class="py-5 bg-dark bottom">
-      <div class="footer navbar-fixed-bottom">
+    <footer class="py-5 bg-dark">
+      <div class="container">
         <p class="m-0 text-center text-white">Developed and Created by Mark Coleman</p>
       </div>
       <!-- /.container -->
